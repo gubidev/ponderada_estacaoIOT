@@ -28,7 +28,6 @@ ESP32 (WiFi) → Broker MQTT (test.mosquitto.org) → leitor.py (subscriber) →
 | Leitor serial | `serial_reader.py` via `pyserial` | `leitor.py` via `paho-mqtt` | Substitui a leitura serial por assinatura no tópico MQTT `estacao/dados` |
 | Arquivo `.ino` | `estacao.ino` (Arduino) | `codigo.ino` (ESP32) | Sketch adaptado para ESP32 com suporte a WiFi e PubSubClient |
 | Simulação | Opcional no Arduino ou Python | Embutida no ESP32 (`modoSimulacao = true`) | O próprio ESP32 gera dados simulados realistas quando os sensores físicos não estão montados |
-| Rotas HTML | `/leituras` (GET) | `/historico` | A rota de listagem HTML foi renomeada para maior clareza semântica; a API REST de dados continua em `/leituras` |
 
 ### Sobre o ESP32 e MQTT
 
