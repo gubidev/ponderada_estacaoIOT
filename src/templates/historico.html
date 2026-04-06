@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Histórico de Leituras</h1>
+
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Data/Hora</th>
+                <th>Temperatura (°C)</th>
+                <th>Umidade (%)</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for leitura in leituras %}
+            <tr>
+                <td>{{ leitura.id }}</td>
+                <td>{{ leitura.timestamp }}</td>
+                <td>{{ leitura.temperatura }}</td>
+                <td>{{ leitura.umidade }}</td>
+                <td>
+                    <a href="/editar/{{ leitura.id }}" class="btn btn-edit">Editar</a>
+                    <button onclick="deletarLeitura({{ leitura.id }})" class="btn btn-danger">Excluir</button>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

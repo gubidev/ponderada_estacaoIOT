@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="header-section">
+    <h1>Dashboard em Tempo Real</h1>
+    <p>Últimas leituras capturadas pelo ESP32/Arduino.</p>
+</div>
+
+<div class="card grafico-container">
+    <canvas id="graficoSensores"></canvas>
+</div>
+
+<h2>Últimas 10 Leituras</h2>
+<div class="cards-grid">
+    {% for leitura in leituras %}
+    <div class="card reading-card">
+        <h3>Leitura #{{ leitura.id }}</h3>
+        <p class="temp">🌡️ {{ leitura.temperatura }}°C</p>
+        <p class="umid">💧 {{ leitura.umidade }}%</p>
+        <p class="pressao">🧭 {{ leitura.pressao if leitura.pressao else 'N/A' }} hPa</p>
+        <small>⏳ {{ leitura.timestamp }}</small>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Editar Leitura #{{ leitura.id }}</h1>
+
+<div class="card form-card">
+    <form onsubmit="atualizarLeitura(event, {{ leitura.id }})">
+        <div class="form-group">
+            <label for="temp">Temperatura (°C):</label>
+            <input type="number" step="0.1" id="temp" value="{{ leitura.temperatura }}" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="umid">Umidade (%):</label>
+            <input type="number" step="0.1" id="umid" value="{{ leitura.umidade }}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="pressao">Pressão (hPa):</label>
+            <input type="number" step="0.1" id="pressao" value="{{ leitura.pressao if leitura.pressao else '' }}">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+        <a href="/historico" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+{% endblock %}
