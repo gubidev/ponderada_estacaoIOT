@@ -167,11 +167,6 @@ curl -X POST http://localhost:5000/leituras \
   -d '{"temperatura": 24.5, "umidade": 62.0, "pressao": 1013.2}'
 ```
 
-Resposta esperada (`201 Created`):
-```json
-{"id": 1, "status": "criado"}
-```
-
 ### Exemplo — atualizar leitura
 
 ```bash
