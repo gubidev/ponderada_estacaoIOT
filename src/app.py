@@ -3,7 +3,7 @@ import database
 
 app = Flask(__name__)
 
-#Iniciary Data Base
+#Incia o Data Base
 database.init_db()
 
 @app.route('/', methods=['GET'])
