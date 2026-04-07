@@ -8,7 +8,7 @@ database.init_db()
 
 @app.route('/', methods=['GET'])
 def index():
-    # Endpoint do painel principal exibindo so as 10 primeiras, ver na ponderada se é isso msm
+    # Endpoint do painel principal exibindo so as 10 primeiras, ver na ponderada se é isso msm LEMBRAR DE TROCAR SE NAO FOR
     leituras = database.listar_leituras(limite=10)
     return render_template('index.html', leituras=leituras)
 
