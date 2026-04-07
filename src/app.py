@@ -3,12 +3,12 @@ import database
 
 app = Flask(__name__)
 
-# Inicializa o banco ao rodar
+#Iniciary Data Base
 database.init_db()
 
 @app.route('/', methods=['GET'])
 def index():
-    # Endpoint do painel principal (exibe as últimas 10 leituras)
+    # Endpoint do painel principal exibindo so as 10 primeiras, ver na ponderada se é isso msm
     leituras = database.listar_leituras(limite=10)
     return render_template('index.html', leituras=leituras)
 
