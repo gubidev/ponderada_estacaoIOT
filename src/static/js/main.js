@@ -11,7 +11,7 @@ async function carregarGrafico() {
         const response = await fetch('/api/leituras/recentes');
         const dados = await response.json();
 
-        // Precisamos inverter os dados para o gráfico ir do mais antigo para o mais novo
+        // Invertendo os dados para o gráfico ir do mais antigo para o mais novo
         dados.reverse();
 
         const labels = dados.map(d => d.timestamp.split(' ')[1]); // Pega só a hora
