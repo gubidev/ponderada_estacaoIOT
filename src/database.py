@@ -4,7 +4,7 @@ import os
 DB_PATH = os.path.join(os.path.dirname(__file__), '..', 'dados.db')
 
 def get_db_connection():
-    # Modo WAL permite que dois processos escrevam sem travar a aplicação inteira
+    
     conn = sqlite3.connect(DB_PATH, timeout=10)
     conn.execute('PRAGMA journal_mode=WAL')
     conn.execute('PRAGMA busy_timeout=5000')
